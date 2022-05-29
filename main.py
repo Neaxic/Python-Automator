@@ -1,15 +1,42 @@
 import os
 
-readmeContent = ["# \U0001f1ef Yo\n",
-"### 🔭 I'm currently learning more about react, web3, contracts & solidity.\n",
-"### 🌏 Mainly focused on frontend & backend development - and finding a place in web3\n",
-"### 📫 Current websites www.javel.dk & www.apecode.io]"]
+readmeContent = ["# Yo\n",
+"### I'm currently learning more about react, web3, contracts & solidity.\n",
+"### Mainly focused on frontend & backend development - and finding a place in web3\n",
+"### Current websites www.javel.dk & www.apecode.io]"]
+
+readmeContent2 = ["# Yo.\n",
+"### I'm currently learning more about react, web3, contracts & solidity.\n",
+"### Mainly focused on frontend & backend development - and finding a place in web3\n",
+"### Current websites www.javel.dk & www.apecode.io]"]
 
 path = 'C:\\Users\\andre\\Documents\\Github\\neaxic\\README.md'
 
-mdFile = open(path, "w")
-mdFile.writelines(readmeContent);
-mdFile.write("29/05/2022");
+def checkText():
+    mdFile = open(path, "r")
+    text = mdFile.read(5);
+    print(text)
+    if text.endswith('.'):
+        print('ja')
+        writenew()
+    else:
+        writenew2()
 
-mdFile.close()
 
+def writenew():
+    mdFile = open(path, "w")
+    mdFile.writelines(readmeContent);
+    mdFile.close()
+
+def writenew2():
+    mdFile = open(path, "w")
+    mdFile.writelines(readmeContent2);
+    mdFile.close()
+
+checkText()
+
+#git add README.md
+#git commit -m navn
+#git push
+
+os.system("start \"\" cmd /k \"cd /D C:\\Users\\andre\\Documents\\Github\\neaxic\\ & color 04 & git add README.md & git commit -m idk & git push \"")
