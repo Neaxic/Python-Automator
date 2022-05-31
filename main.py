@@ -1,42 +1,77 @@
-import os
+import os, time, keyboard, functions
 
-readmeContent = ["# Yo\n",
-"### I'm currently learning more about react, web3, contracts & solidity.\n",
-"### Mainly focused on frontend & backend development - and finding a place in web3\n",
-"### Current websites www.javel.dk & www.apecode.io]"]
+menuHeader = '''    $$\        $$$$$$\  $$$$$$$\   $$$$$$\  
+    $$ |      $$  __$$\ $$  __$$\ $$  __$$\ 
+    $$ |      $$ /  $$ |$$ |  $$ |$$ /  \__|
+    $$ |      $$$$$$$$ |$$$$$$$\ |\$$$$$$\  
+    $$ |      $$  __$$ |$$  __$$\  \____$$\ 
+    $$ |      $$ |  $$ |$$ |  $$ |$$\   $$ |
+    $$$$$$$$\ $$ |  $$ |$$$$$$$  |\$$$$$$  |
+    \________|\__|  \__|\_______/  \______/'''
 
-readmeContent2 = ["# Yo.\n",
-"### I'm currently learning more about react, web3, contracts & solidity.\n",
-"### Mainly focused on frontend & backend development - and finding a place in web3\n",
-"### Current websites www.javel.dk & www.apecode.io]"]
-
-path = 'C:\\Users\\andre\\Documents\\Github\\neaxic\\README.md'
-
-def checkText():
-    mdFile = open(path, "r")
-    text = mdFile.read(5);
-    print(text)
-    if text.endswith('.'):
-        print('ja')
-        writenew()
-    else:
-        writenew2()
+#Functions
 
 
-def writenew():
-    mdFile = open(path, "w")
-    mdFile.writelines(readmeContent);
-    mdFile.close()
+#MENU STUFF
+selected = 0
 
-def writenew2():
-    mdFile = open(path, "w")
-    mdFile.writelines(readmeContent2);
-    mdFile.close()
+menuItems = ['GITHUB COMMITTER', 'Github commits2', 'Github 3']
 
-checkText()
+def show_menu():
+    global selected
+    os.system('cls')
+    os.system("color 04") 
+    print("\n" * 2)
+    print(menuHeader)
+    print("\n" * 3)
+    os.system("color 07") 
+    print("     Choose an option:")
+    for idx, x in enumerate(menuItems):
+        print("         {0} ".format("=>" if selected == idx else " ")+x+" ")
 
-#git add README.md
-#git commit -m navn
-#git push
+def up():
+    global selected
+    if selected <= 0:
+        return
+    selected -= 1
+    show_menu()
 
-os.system("start \"\" cmd /k \"cd /D C:\\Users\\andre\\Documents\\Github\\neaxic\\ & color 04 & git add README.md & git commit -m idk & git push \"")
+def down():
+    global selected
+    if selected >= len(menuItems)-1:
+        return
+    selected += 1
+    show_menu()
+
+def enter():
+    global selected
+    if selected == 0:
+        done = functions.startCommit()
+        if(done == True):
+            show_menu()
+    if selected == 1:
+        print("lol2")
+
+show_menu()
+keyboard.add_hotkey('up', up)
+keyboard.add_hotkey('down', down)
+keyboard.add_hotkey('enter', enter)
+keyboard.wait()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
