@@ -45,7 +45,7 @@ def startCommit():
     checkText()
     time.sleep(1)
     print(f'{yellow_color}     > [⏳] Commiting & pushing update...')
-    os.system("start \"\" cmd /k \"cd /D C:\\Users\\andre\\Documents\\Github\\neaxic\\ & color 04 & git add README.md & git commit -m idk & git push \"")
+    os.system("start \"\" cmd /k \"cd /D C:\\Users\\andre\\Documents\\Github\\neaxic\\ & color 04 & git add README.md & git commit -m idk & git push & exit\"")
     time.sleep(3)
     print(f'{green_color}     > [✅] Task done. Returning to menu...')
     time.sleep(2)
