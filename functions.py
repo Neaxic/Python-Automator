@@ -3,11 +3,11 @@ import os, time
 readmeContent = ["# Yo\n",
 "### I'm currently learning more about react, web3, contracts & solidity.\n",
 "### Mainly focused on frontend & backend development - and finding a place in web3\n",
-"### Current websites www.javel.dk & www.apecode.io]"]
+"### Current websites www.javel.dk & www.apecode.io"]
 readmeContent2 = ["# Yo.\n",
 "### I'm currently learning more about react, web3, contracts & solidity.\n",
 "### Mainly focused on frontend & backend development - and finding a place in web3\n",
-"### Current websites www.javel.dk & www.apecode.io]"]
+"### Current websites www.javel.dk & www.apecode.io"]
 
 path = 'C:\\Users\\andre\\Documents\\Github\\neaxic\\README.md'
 
