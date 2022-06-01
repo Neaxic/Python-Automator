@@ -15,7 +15,7 @@ menuHeader = '''    $$\        $$$$$$\  $$$$$$$\   $$$$$$\
 #MENU STUFF
 selected = 0
 
-menuItems = ['GITHUB COMMITTER', 'Github commits2', 'Github 3']
+menuItems = ['[🤖] GITHUB COMMITTER', '[🤖] Github commits2', '[⚙️] SETTINGS']
 
 def show_menu():
     global selected
