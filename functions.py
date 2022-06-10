@@ -1,33 +1,35 @@
 import os, time, nftApi
 
-readmeContent = ["# Yo\n",
-"### I'm currently learning more about react, web3, contracts & solidity.\n",
-"### Mainly focused on frontend & backend development - and finding a place in web3\n",
-"### Current websites www.javel.dk & www.apecode.io]"]
-readmeContent2 = ["# Yo.\n",
-"### I'm currently learning more about react, web3, contracts & solidity.\n",
-"### Mainly focused on frontend & backend development - and finding a place in web3\n",
-"### Current websites www.javel.dk & www.apecode.io]"]
+readmeContent = [""]
 
 path = 'C:\\Users\\andre\\Documents\\Github\\neaxic\\README.md'
 wallet = '0xb504439D29220A07fB5efd6D881df671934C3B51'
 
 def checkText():
     mdFile = open(path, "r")
-    text = mdFile.read(5);
-    if text.endswith('.'):
-        writenew()
+    readmeContent = mdFile.readlines()
+    thePYTextOG = "This file was lastly modified by a Python automator script"
+    mdFile.close()
+
+    if "." in readmeContent[10]:
+        mdFile = open(path, "w")
+        readmeContent[10] = readmeContent[10].replace(".", " ")
+        mdFile.writelines(readmeContent);
+        mdFile.close()
     else:
-        writenew2()
+        mdFile = open(path, "w")
+        readmeContent[10] = readmeContent[10].replace(thePYTextOG, thePYTextOG+".")
+        mdFile.writelines(readmeContent);
+        mdFile.close()
 
 def writenew():
     mdFile = open(path, "w")
-    mdFile.writelines(readmeContent);
+    mdFile.write(readmeContent);
     mdFile.close()
 
 def writenew2():
     mdFile = open(path, "w")
-    mdFile.writelines(readmeContent2);
+    mdFile.write(".");
     mdFile.close()
 
 def rgb(red, green, blue):
@@ -37,6 +39,7 @@ red_color = rgb(200, 0, 0)
 green_color = rgb(0, 200, 0)
 yellow_color = rgb(200, 200, 0)
 blue_color = rgb(0, 0, 200)
+
 
 def startCommit():
     os.system("color 07") 
